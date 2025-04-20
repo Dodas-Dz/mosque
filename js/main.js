@@ -44,10 +44,27 @@
         return false;
     });
 
-    $('.counter').counterUp({
-        delay: 10,
-        time: 1000
-    });
+    $(document).ready(function() {
+        // On cible tous les éléments avec la classe 'counter' et on leur applique une animation
+        $('.counter').each(function() {
+          var $this = $(this);
+          var countTo = $this.attr('data-count'); // Valeur à atteindre
+          $({
+            countNum: $this.text() // Commence à la valeur actuelle du compteur
+          }).animate({
+            countNum: countTo // Incrémenter jusqu'à la valeur cible
+          }, {
+            duration: 2000, // Durée de l'animation (2 secondes)
+            easing: 'swing', // Type d'animation (effet de rebond)
+            step: function() {
+              $this.text(Math.ceil(this.countNum)); // Met à jour le texte du compteur pendant l'animation
+            },
+            complete: function() {
+              $this.text(countTo); // Assure que le compteur affiche la valeur finale
+            }
+          });
+        });
+      });
     // Testimonial carousel
     $(".testimonial-carousel").owlCarousel({
         autoplay: true,

@@ -7,42 +7,69 @@
     transition: opacity .8s ease-out, visibility 0s linear .5s;
     z-index: 99999;
 }
-.fun-facts{
-    position:relative;
-}
-.fun-facts.section{
-    padding:120px 0;
-}
-.fun-facts{
-    background:url("../img/SL-020520-27660-188.png");
-    background-size:cover;
-    background-repeat:no-repeat;
-}
 
 
-.fun-facts .single-fun:hover i{
-    color:#1A76D1;
-    background:#fff;
-    border-color:transparent;
+.fun-facts {
+    background: url("../img/SL-020520-27660-188.png");
+    background-color: rgba(0, 0, 0, 0);
+    background-repeat: no-repeat; /* Assure que l'image ne se répète pas */
+    background-size: cover; /* L'image couvre toute la section */
+    background-position: center; /* Centrer l'image pour un meilleur rendu */
+    background-attachment: fixed; /* L'image reste fixe lors du défilement de la page */
+  }
+.fun-facts {
+    padding: 110px 0; /* Réduction du padding */
+    background-color: #f9f9f9;
 }
-.fun-facts .single-fun .content {
-    padding-left: 80px;
+
+.fun-facts .container {
+    max-width: 900px; /* Garder la taille initiale du container */
+    margin: 0 auto;
 }
-.fun-facts .single-fun span {
-    color: #fff;
-    font-weight: 600;
-    font-size: 30px;
-    position: relative;
+
+/* Alignement et disposition des éléments */
+.fun-facts .row {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+/* Réduction de la taille des div internes */
+.single-fun {
+    background-color: transparent; /* Fond transparent */
+    padding: 10px; /* Réduction du padding */
+    border-radius: 8px; /* Réduction du rayon des coins */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère autour de la div */
+    margin-bottom: 15px; /* Réduction de la marge */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    flex-basis: 25%; /* Largeur réduite des div internes */
+}
+
+.single-fun:hover {
+    transform: translateY(-3px); /* Réduction de l'effet de survol */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+}
+
+/* Style des icônes */
+.single-fun .content i {
+    font-size: 1.5rem; /* Réduction de la taille des icônes */
+    color: #fbbc2a;
+    margin-bottom: 8px; /* Réduction de la marge sous l'icône */
+}
+
+/* Style des chiffres et texte */
+.single-fun .content .counter {
+    font-size: 1.5rem; /* Réduction de la taille du chiffre */
+    font-weight: bold;
+    color: #333333;
     display: block;
-    -webkit-transition: all 0.4s ease;
-    -moz-transition: all 0.4s ease;
-    transition: all 0.4s eas;
-    display: block;
-    margin-bottom: 7px;
 }
-.fun-facts .single-fun p{
-    color:#fff;
-    font-size:15px;
+
+.single-fun .content p {
+    font-size: 0.9rem; /* Réduction de la taille du texte */
+    color: #777777;
+    margin-top: 5px;
 }
 
 #spinner.show {
